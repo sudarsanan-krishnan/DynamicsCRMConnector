@@ -1,0 +1,14 @@
+﻿{
+    "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
+    "id": "DynamicsCRMConnectorV1",
+    "namespace": "microsoft.com",
+    "gateway": "2015-01-14",
+    "version": "1.0.0",
+    "title": "DynamicsCRMConnectorV1",
+    "summary": "V1 CRM connector",
+    "author": "K.S",
+    "endpoints": {
+        "apiDefinition": "/swagger/docs/v1",
+        "status": null
+    }
+}

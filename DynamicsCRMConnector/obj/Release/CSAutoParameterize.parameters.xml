@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="CRMConnectionString-Web.config Connection String" description="CRMConnectionString Connection String used in web.config by the application to access the database." defaultValue="Url=https://psareports.crm.dynamics.com; Username=william@psa365.onmicrosoft.com; Password=passcode;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\sukris\\Downloads\\DynamicsCRMConnector\\DynamicsCRMConnector\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CRMConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="EntityName-Web.config Connection String" description="EntityName Connection String used in web.config by the application to access the database." defaultValue="new_servicealert" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\sukris\\Downloads\\DynamicsCRMConnector\\DynamicsCRMConnector\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EntityName']/@connectionString" />
+  </parameter>
+</parameters>

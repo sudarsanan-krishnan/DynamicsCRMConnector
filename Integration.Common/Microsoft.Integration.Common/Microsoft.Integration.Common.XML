@@ -1,0 +1,1115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Integration.Common</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Integration.Common.Messaging.Attachment">
+            <summary>
+            This class denotes an Attachment
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.Messaging.Content">
+            <summary>
+            This class denotes the content of file/document/message
+            For a content: we need to know the stream/content string, its encoding type and the actual content-type
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.#ctor">
+            <summary>
+            Initializes a new instance of the Content class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the Content class. To be used for string content.
+            </summary>
+            <param name="content"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.#ctor(System.String,System.String,System.Net.Mime.TransferEncoding)">
+            <summary>
+            Initializes a new instance of the Content class. To be used for string content.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.#ctor(System.IO.Stream,System.String)">
+            <summary>
+            /// <summary>
+            Initializes a new instance of the Content class. To be used for stream content. Stream is converted to base64 encoded string and is saved to content data
+            </summary>
+            </summary>
+            <param name="stream"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.#ctor(System.IO.Stream,System.String,System.Net.Mime.TransferEncoding)">
+            <summary>
+            Constructor that when given a stream, converts to encoded string based on encoding provided and saves it to content data
+            </summary>
+            <param name="stream"></param>
+            <param name="contentType"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.GetStream">
+            <summary>
+            From ContentData converts to Stream format based on Content-Transfer Encoding
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.ReadStreamAsString(System.IO.Stream)">
+            <summary>
+            Utility function needed to read stream as string
+            </summary>
+            <param name="stream"></param>
+            <returns>string</returns>
+            <exception cref="T:System.ArgumentNullException">throws ArgumentNullException when stream is null</exception>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Content.ReadStreamAsByteArray(System.IO.Stream)">
+            <summary>
+            Utility functions needed to read stream as bytes
+            </summary>
+            <param name="stream"></param>
+            <returns>byte[]</returns>
+            <exception cref="T:System.ArgumentNullException">throws ArgumentNullException when stream is null</exception>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.Content.ContentData">
+            <summary>
+            This will store the information in base64 encoded for streams and as-is for string type of data
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.Content.ContentType">
+            <summary>
+            This denotes the Content-Type of Content-Data when it is decoded.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.Content.ContentTransferEncoding">
+            <summary>
+            This denotes the content-transfer encoding used to transfer content-data for base64 it is Base64, keep empty if no encoding is used.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Attachment.#ctor">
+            <summary>
+            Initializes a new instance of the Attachment class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Attachment.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes an instance of the Attachment class
+            </summary>
+            <param name="content">Content of attachment</param>
+            <param name="contentType">ContentType of attachment</param>
+            <param name="fileName">File name of attachment</param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Attachment.#ctor(System.String,System.String,System.Net.Mime.TransferEncoding,System.String)">
+            <summary>
+            Initializes an instance of the Attachment class
+            </summary>
+            <param name="content">Content of attachment</param>
+            <param name="contentType">ContentType of attachment</param>
+            <param name="contentTransferEncoding">Content Transfer Encoding of attachment</param>
+            <param name="fileName">File name of attachment</param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.Attachment.#ctor(System.IO.Stream,System.String,System.String)">
+            <summary>
+            Initializes an instance of the Attachment class
+            </summary>
+            <param name="stream">Content stream of attachment</param>
+            <param name="contentType">ContentType of attachment</param>
+            <param name="fileName">File name of attachment</param>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.Attachment.FileName">
+            <summary>
+            This denotes the file name of the attachment
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.CommonResource">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.AccessTokenInvalid">
+            <summary>
+              Looks up a localized string similar to Access Token is invalid or expired. You may need to authorize your connector again..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.AccessTokenNotFound">
+            <summary>
+              Looks up a localized string similar to Access token is not found in gateway. Try authorizing your connector again..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.AccessTokenValid">
+            <summary>
+              Looks up a localized string similar to Access token is valid..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.Running">
+            <summary>
+              Looks up a localized string similar to Running.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.StatusCheckFailed">
+            <summary>
+              Looks up a localized string similar to Failed to determine the health of your {0} API App..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.CommonResource.ValidConfigurationStatus">
+            <summary>
+              Looks up a localized string similar to API App configuration is valid..
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.CommonConstants">
+            <summary>
+            Common strings
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.FileName">
+            <summary>
+            File Name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.FolderPath">
+            <summary>
+            Folder Path
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.LastModifiedUtc">
+            <summary>
+            Last Modified Time
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.FileSizeInBytes">
+            <summary>
+            File Size
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.FilePath">
+            <summary>
+            File Path
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.FileType">
+            <summary>
+            File Type
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.Overwrite">
+            <summary>
+            Overwrite
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.Root">
+            <summary>
+            Root
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.AuthorizationHeader">
+            <summary>
+            Authorization header
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.tokenResultHeaderName">
+            <summary>
+            TokenResult header name
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.CommonConstants.AccessToken">
+            <summary>
+            Access Token
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.ContentNullException">
+            <summary>
+            This is for Content being null
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentNullException.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentNullException.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentNullException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentNullException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="serializeInfo"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Microsoft.Integration.Common.ContentInvalidBase64Exception">
+            <summary>
+            This is for Content Being Invalid Base64 when ContentEncoding is provided as Base64
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentInvalidBase64Exception.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentInvalidBase64Exception.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentInvalidBase64Exception.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentInvalidBase64Exception.#ctor(System.Exception)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="inner"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.ContentInvalidBase64Exception.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            
+            </summary>
+            <param name="serializeInfo"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Microsoft.Integration.Common.CustomExceptionHandler">
+            <summary>
+            Handling all the exceptions from the controllers and returning appropriate exception messages.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.CustomExceptionHandler.ShouldHandle(System.Web.Http.ExceptionHandling.ExceptionHandlerContext)">
+            <summary>
+            Should we handle the exceptions or not
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.CustomExceptionHandler.Handle(System.Web.Http.ExceptionHandling.ExceptionHandlerContext)">
+            <summary>
+            Handle the Exception
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:Microsoft.Integration.Common.HttpHelpers">
+            <summary>
+            HttpHelpers
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.HttpHelpers.CreateErrorResponse(System.Net.Http.HttpRequestMessage,Microsoft.Integration.Common.ErrorResponseBody)">
+            <summary>
+            Helper method to create ErrorRespone
+            </summary>
+            <param name="request">This should be the source request. For Eg: </param>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.HttpHelpers.CreateErrorResponse(System.Net.Http.HttpRequestMessage,System.Net.HttpStatusCode,System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Helper method to create ErrorRespone
+            </summary>
+            <param name="request"></param>
+            <param name="statusCode"></param>
+            <param name="message"></param>
+            <param name="errors"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.HttpHelpers.CreateResponseMessageFromException(System.Exception,System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Creates a response message from Exception
+            </summary>
+            <param name="exception"></param>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.HttpHelpers.CreateErrorResponse(System.Net.Http.HttpRequestMessage,System.Net.Http.HttpResponseMessage,System.Func{Newtonsoft.Json.Linq.JObject,System.String})">
+            <summary>
+            Helper method to create an error response for a particular request from the body of another response
+            </summary>
+            <param name="request"></param>
+            <param name="response"></param>
+            <param name="responseReader"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.HttpHelpers.GetErrorBodyFromErrorReponse(System.Net.Http.HttpResponseMessage,System.Func{Newtonsoft.Json.Linq.JObject,System.String})">
+            <summary>
+            Helper Method to Create ErrorResponseBody from the HttpResponseMessage
+            </summary>
+            <param name="response"></param>
+            <param name="responseReader">Should read the body of HttpResponseMessage and return the error message in string format</param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Integration.Common.ErrorResponseBody">
+            <summary>
+            Class to represent the body of error resposne
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.ErrorResponseBody.Status">
+            <summary>
+            The Http Status code of the response
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.ErrorResponseBody.Message">
+            <summary>
+            Error Message
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.ErrorResponseBody.Source">
+            <summary>
+            URL of Source of the error
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.ErrorResponseBody.Errors">
+            <summary>
+            any errors provided by the source (optional)
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.Messaging.FileType">
+            <summary>
+            Enum to specify content encoding type
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.Messaging.FileType.Text">
+            <summary>
+            For FileType as Text
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.Messaging.FileType.Binary">
+            <summary>
+            For FileType as Binary
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.Messaging.ContentTransferEncoding">
+            <summary>
+            Enum to specify content encoding type
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.Messaging.ContentTransferEncoding.None">
+            <summary>
+            For FileType as Text
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.Messaging.ContentTransferEncoding.Base64">
+            <summary>
+            For FileType as Binary
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.Messaging.FileContent">
+            <summary>
+            This class denotes the content of file/document/message
+            For a content: we need to know the stream/content string, its encoding type
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.#ctor">
+            <summary>
+            Initializes a new instance of the Content class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the Content class. To be used for string content.
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.#ctor(System.String,Microsoft.Integration.Common.Messaging.ContentTransferEncoding)">
+            <summary>
+            Initializes a new instance of the Content class. To be used for string content.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.#ctor(System.IO.Stream)">
+            <summary>
+            Constructor that when given a stream, converts to encoded string based on encoding provided and saves it to content data
+            </summary>
+            <param name="stream"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.#ctor(System.IO.Stream,Microsoft.Integration.Common.Messaging.ContentTransferEncoding)">
+            <summary>
+            Constructor that when given a stream, converts to encoded string based on encoding provided and saves it to content data
+            </summary>
+            <param name="stream"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.GetStream">
+            <summary>
+            From ContentData converts to Stream format based on Content-Transfer Encoding
+            </summary>
+            <returns></returns>
+            <exception cref="T:Microsoft.Integration.Common.ContentNullException"></exception>
+            <exception cref="T:Microsoft.Integration.Common.ContentInvalidBase64Exception"></exception>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.ReadStreamAsString(System.IO.Stream)">
+            <summary>
+            Utility function needed to read stream as string
+            </summary>
+            <param name="stream"></param>
+            <returns>string</returns>
+            <exception cref="T:System.ArgumentNullException">throws ArgumentNullException when stream is null</exception>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.ReadStreamAsByteArray(System.IO.Stream)">
+            <summary>
+            Utility functions needed to read stream as bytes
+            </summary>
+            <param name="stream"></param>
+            <returns>byte[]</returns>
+            <exception cref="T:System.ArgumentNullException">throws ArgumentNullException when stream is null</exception>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.FileContent.GetEncodingBasedOnFileType(Microsoft.Integration.Common.Messaging.FileType)">
+            <summary>
+            returns currently supported content transfer encoding based on file type
+            </summary>
+            <param name="fileType"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.FileContent.Content">
+            <summary>
+            This will store the information in base64 encoded for streams and as-is for string type of data
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.FileContent.ContentTransferEncoding">
+            <summary>
+            This denotes the content-transfer encoding used to transfer content-data for base64 it is Base64, keep empty if no encoding is used.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.File">
+            <summary>
+            Model Class defining attributes of the response to be returned for Download File Operation
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.File.#ctor">
+            <summary>
+            Empty constructor for json serilaization
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.File.#ctor(System.IO.Stream,Microsoft.Integration.Common.Messaging.ContentTransferEncoding)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="stream"></param>
+            <param name="encoding"></param>
+        </member>
+        <member name="P:Microsoft.Integration.Common.File.FileName">
+            <summary>
+            FileName
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.File.FilePath">
+            <summary>
+            FilePath
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.File.FolderPath">
+            <summary>
+            Path of the folder containg the file
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.FileInfo">
+            <remarks/>
+        </member>
+        <member name="P:Microsoft.Integration.Common.FileInfo.FileName">
+            <summary>
+            The name of the file
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.FileInfo.FolderPath">
+            <summary>
+            The name of the folder which contains the file
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.FileInfo.LastModifiedUtc">
+            <summary>
+            Last updated time of the file
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.FileInfo.FileSizeInBytes">
+            <summary>
+            The size of the file
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.FileInfo.FilePath">
+            <summary>
+            The path of the file
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.FileUploadResponse">
+            <remarks/>
+        </member>
+        <member name="P:Microsoft.Integration.Common.FileUploadResponse.FileName">
+            <remarks/>
+        </member>
+        <member name="P:Microsoft.Integration.Common.FileUploadResponse.FilePath">
+            <remarks/>
+        </member>
+        <member name="T:Microsoft.Integration.Common.Logger">
+            <summary>
+            Provides logging capability to both MDS via Antares as well as .Net Trace.
+            Its preferable to use the static logging methods over the instance methods, since they are more efficient.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.Create(System.String)">
+            <summary>
+            </summary>
+            <param name="requestUri"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogMessage(System.Net.Http.HttpRequestMessage,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogMessage(System.Net.Http.HttpRequestMessage,System.Boolean,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="logToMdsOnly"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogWarning(System.Net.Http.HttpRequestMessage,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogWarning(System.Net.Http.HttpRequestMessage,System.Boolean,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="logToMdsOnly"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogError(System.Net.Http.HttpRequestMessage,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogError(System.Net.Http.HttpRequestMessage,System.Boolean,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="logToMdsOnly"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogException(System.Net.Http.HttpRequestMessage,System.Exception)">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogException(System.Net.Http.HttpRequestMessage,System.Boolean,System.Exception)">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="logToMdsOnly"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogExceptionAsWarning(System.Net.Http.HttpRequestMessage,System.Exception)">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogExceptionAsWarning(System.Net.Http.HttpRequestMessage,System.Boolean,System.Exception)">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="logToMdsOnly"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogUserError(System.Net.Http.HttpRequestMessage,System.String,System.Object[])">
+            <summary>
+            Logs User error into application events. It also logs it into Mds logs as Warning (to avoid noise in the Mds logs).
+            </summary>
+            <param name="request"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogMessage(System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogMessage(System.Boolean,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="logToMdsOnly"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogWarning(System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogWarning(System.Boolean,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="logToMdsOnly"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogError(System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogError(System.Boolean,System.String,System.Object[])">
+            <summary>
+            </summary>
+            <param name="logToMdsOnly"></param>
+            <param name="message"></param>
+            <param name="parameters"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogException(System.Exception)">
+            <summary>
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogExceptionAsWarning(System.Exception)">
+            <summary>
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Logger.LogException(System.Boolean,System.Exception)">
+            <summary>
+            </summary>
+            <param name="logToMdsOnly"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="T:Microsoft.Integration.Common.LoggingHandler">
+            <summary>
+            A DelegatingHandler that captures traces associated to a request into MDS.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.LoggingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)">
+            <summary>
+            Calls in the next handler.
+            </summary>
+            <param name="request"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Integration.Common.MdsRow">
+            <summary>
+            Represents a trace in MDS.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.MdsRow.#ctor">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.MdsRow.Schema">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.MdsRow.HttpMethod">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.MdsRow.Messages">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.TraceMessage">
+            <summary>
+            Represents a single trace line.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.TraceMessage.TimeStamp">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.TraceMessage.Level">
+            <summary>
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.TraceMessage.Message">
+            <summary>
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.OAuth1Controller">
+            <summary>
+            Base ApiController for all OAuth 1.0 Connectors.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.OAuthController">
+            <summary>
+            Base ApiController for all OAuth Connectors.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.OAuthController.AuthorizationHeader">
+            <summary>
+            Authorization header constant
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthController.#ctor(System.String)">
+            <summary>
+            ctor
+            </summary>
+            <param name="providerName">ProviderName (e.g. facebook, box, dropbox, etc.) for which the token needs to be retrieved.</param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthController.GetTokenAsync">
+            <summary>
+            Gets the OAuth AccessToken for the Provider specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthController.GetTokenResultAsync">
+            <summary>
+            Gets the OAuth TokenResult object for the Provider specified.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthController.AddOAuthHeader(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Add OAuth 2.0 Authorization Header to the request 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthController.UrlEncodeSpecialCharacters(System.String)">
+            <summary>
+            Encodes special characters in a string.
+            </summary>
+            <param name="originalString">The string to be encoded</param>
+            <returns>The enocded string.</returns>
+        </member>
+        <member name="P:Microsoft.Integration.Common.OAuthController.TokenProvider">
+            <summary>
+            Static OAuthTokenProvider instance
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuth1Controller.#ctor(System.String)">
+            <summary>
+            ctor
+            </summary>
+            <param name="providerName">ProviderName (e.g. quickbooks, twitter, etc.) for which the token needs to be retrieved.</param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuth1Controller.AddOAuthHeader(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Add OAuth 1.0 Authorization Header to the request 
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.OAuthTokenValidator">
+            <summary>
+            Helper class for validating OAuth access token.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthTokenValidator.ValidateAccessToken(System.Web.Http.ApiController,System.String,System.Func{System.Threading.Tasks.Task{System.Net.HttpWebRequest}},System.Func{System.Net.WebResponse,Microsoft.Integration.Common.StatusCheckEntry})">
+            <summary>
+            Validates the access token for any OAuth connector.
+            </summary>
+            <param name="authController">The connector controller which uses access token based authentication</param>
+            <param name="connectorName">The name of the connector for which the validation will be done.</param>
+            <param name="getAccessTokenVerificationRequest">Callback that computes the request object that will be used to do access token verification.</param>
+            <param name="webResponseProcessor">Callback that processes the web response from 3rd party service.</param>
+            <returns>A status check record indiciating the outcome of access token check.</returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthTokenValidator.DoesRequestTokenHaveZumoToken(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Checks whether request headers have zumo token or not.
+            </summary>
+            <param name="request">The request object</param>
+            <returns>Whether or not zumo token is present in header or not.</returns>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthTokenValidator.GetInvalidAccessTokenStatusCheckEntry">
+            <summary>
+            Constructs a status check entry for invalid access token.
+            </summary>
+            <returns>Status check entry</returns>
+        </member>
+        <member name="T:Microsoft.Integration.Common.Messaging.MessageDescription">
+            <summary>
+            Class that denotes a file/document message which comprises of content and properties
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription.#ctor">
+            <summary>
+            Empty Constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Initializes new instance of the class and is used for string content
+            </summary>
+            <param name="content"></param>
+            <param name="allProperties"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription.#ctor(System.IO.Stream,System.Collections.Generic.IDictionary{System.String,System.Object},System.String)">
+            <summary>
+            Initializes new instance of the class and converts stream to base64 format and save
+            </summary>
+            <param name="stream"></param>
+            <param name="allProperties"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription.GetContentStream">
+            <summary>
+            Returns Stream associated with Content.
+            </summary>
+            <returns>Stream</returns>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.MessageDescription.Content">
+            <summary>
+            Content Information of message/file/document
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.MessageDescription.Properties">
+            <summary>
+            Properties/Metadata associated with message/file/document
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.Messaging.MessageDescription2">
+            <summary>
+            Class that denotes a file/document message which comprises of content and properties
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription2.#ctor">
+            <summary>
+            Empty Constructor
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription2.#ctor(System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Initializes new instance of the class and is used for string content
+            </summary>
+            <param name="content"></param>
+            <param name="allProperties"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription2.#ctor(System.IO.Stream,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Initializes new instance of the class and converts stream to base64 format and save
+            </summary>
+            <param name="stream"></param>
+            <param name="allProperties"></param>
+            <param name="contentType"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.Messaging.MessageDescription2.GetContentStream">
+            <summary>
+            Returns Stream associated with Content.
+            </summary>
+            <returns>Stream</returns>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.MessageDescription2.Content">
+            <summary>
+            Content Information of message/file/document
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.Messaging.MessageDescription2.Properties">
+            <summary>
+            Properties/Metadata associated with message/file/document
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.OAuthTokenProvider">
+            <summary>
+            Class which retrieves the AccessToken for the given provider
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.OAuthTokenProvider.SelfHosted">
+            <summary>
+            AppSetting name to be set to true if the Microservice is running under self-hosted context
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.OAuthTokenProvider.AccessToken">
+            <summary>
+            AccessToken field in TokenResult.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.OAuthTokenProvider.providerName">
+            <summary>
+            provider for which the AccessToken will be retrieved
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.OAuthTokenProvider.isSelfHosted">
+            <summary>
+            bool to indicate whether the token should be retrieved from ZumoAuthHeader
+            or from TokenStore
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthTokenProvider.#ctor(System.String)">
+            <summary>
+            ctor
+            </summary>
+            <param name="providerName"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthTokenProvider.GetTokenResultAsync(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Gets the OAuth Access Token from the token store or from
+            ZumoAuthHeader based on the environment context of the Microservice (self-hosted or not)
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthTokenProvider.GetTokenAsync(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Gets the OAuth Access Token from the token store or from
+            ZumoAuthHeader based on the environment context of the Microservice (self-hosted or not) 
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.OAuthTokenProvider.SetTokenAsync(System.Net.Http.HttpRequestMessage,Microsoft.Azure.AppService.ApiApps.Service.TokenResult)">
+            <summary>
+            Sets given TokenResult into TokenStore
+            </summary>
+            <param name="request"></param>
+            <param name="tokenResult"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.Integration.Common.OAuthTokenProvider.IsSelfHosted">
+            <summary>
+            bool to indicate whether the token should be retrieved from ZumoAuthHeader
+            or from TokenStore
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.StatusLevel">
+            <summary>
+            Levels of a connector health status
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusLevel.Error">
+            <summary>
+            Error
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusLevel.Warning">
+            <summary>
+            Warning
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusLevel.Info">
+            <summary>
+            Informational - all's well
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.StatusCheck">
+            <summary>
+            Overall status of a connector's health - may include multiple status records
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.StatusCheck.LogMessage(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Log the status check entry details.
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="P:Microsoft.Integration.Common.StatusCheck.Status">
+            <summary>
+            Collection of status records
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.StatusCheckEntry">
+            <summary>
+            Status data for a particular status check
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.StatusCheckEntry.LogMessage(System.Net.Http.HttpRequestMessage)">
+            <summary>
+            Logs the details of this status check entry
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:Microsoft.Integration.Common.StatusCheckEntry.GetRunningStatusCheckEntry">
+            <summary>
+            Constructs a status check entry with status Running.
+            </summary>
+            <returns>Status check entry</returns>
+        </member>
+        <member name="P:Microsoft.Integration.Common.StatusCheckEntry.Name">
+            <summary>
+            A name for the status code. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.StatusCheckEntry.Message">
+            <summary>
+            Human-readable message. 
+            </summary>
+        </member>
+        <member name="P:Microsoft.Integration.Common.StatusCheckEntry.Level">
+            <summary>
+            Level of connector health status
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.StatusMessages">
+            <summary>
+            Status messages that could be used for logging
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusMessages.AccessTokenValid">
+            <summary>
+            Access token is valid.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusMessages.AccessTokenInvalid">
+            <summary>
+            Accesss token invalid.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusMessages.StatusCheckFailed">
+            <summary>
+            Status check failed due to some unknown reason.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusMessages.ConnectorConfigurationValid">
+            <summary>
+            Connector configuration is valid.
+            </summary>
+        </member>
+        <member name="F:Microsoft.Integration.Common.StatusMessages.ConnectorConfigurationInvalid">
+            <summary>
+            Connector configuration is invalid.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Integration.Common.UnhandledExceptionHandler">
+            <summary>
+            logging unhandled exception 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.UnhandledExceptionHandler.LogAsync(System.Web.Http.ExceptionHandling.ExceptionLoggerContext,System.Threading.CancellationToken)">
+            <summary>
+            Overriden method from exceptionLogger to log the error
+            </summary>
+            <param name="context"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Microsoft.Integration.Common.UnhandledExceptionLogger">
+            <summary>
+            logging unhandled exception 
+            </summary>
+        </member>
+        <member name="M:Microsoft.Integration.Common.UnhandledExceptionLogger.LogAsync(System.Web.Http.ExceptionHandling.ExceptionLoggerContext,System.Threading.CancellationToken)">
+            <summary>
+            Overriden method from exceptionLogger to log the error
+            </summary>
+            <param name="context"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
